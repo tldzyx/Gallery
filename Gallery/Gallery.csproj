@@ -44,6 +44,7 @@
     <Compile Include="Extension\EventArgsExtension.cs" />
     <Compile Include="Extension\EventHandlerExtension.cs" />
     <Compile Include="Extension\ObjectExtension.cs" />
+    <Compile Include="Extension\StringBuilderExtension.cs" />
     <Compile Include="Extension\StringExtension.cs" />
     <Compile Include="Helper\DateTimeHelper.cs" />
     <Compile Include="Helper\StructHelper.cs" />

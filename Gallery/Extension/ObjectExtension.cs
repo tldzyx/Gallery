@@ -7,13 +7,15 @@ namespace Gallery.Extension
     {
         public static TResult Clone<TResult>(this object obj)
         {
-            if (obj is ICloneable<TResult>)
+            ICloneable<TResult> cloneableT = obj as ICloneable<TResult>;
+            if (null != cloneableT)
             {
-                return ((ICloneable<TResult>)obj).Clone();
+                return cloneableT.Clone();
             }
-            if (obj is ICloneable)
+            ICloneable cloneable = obj as ICloneable;
+            if (null != cloneable)
             {
-                object result = ((ICloneable)obj).Clone();
+                object result = cloneable.Clone();
                 if (result is TResult)
                     return (TResult)result;
             }
