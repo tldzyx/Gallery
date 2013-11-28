@@ -18,7 +18,7 @@ namespace Gallery.Helper
             private readonly int _collectionCount;
 
             /// <summary>
-            /// 初始化操作计时器
+            /// 初始化操作计时器，开始计时
             /// </summary>
             /// <param name="text">计时器名称</param>
             public OperationTimer(string text)
@@ -31,6 +31,9 @@ namespace Gallery.Helper
                 _startTime = Stopwatch.GetTimestamp();
             }
         
+            /// <summary>
+            /// 结束计时，输出结果
+            /// </summary>
             public void Dispose()
             {
                 Console.WriteLine(
@@ -41,6 +44,9 @@ namespace Gallery.Helper
                     _text);
             }
 
+            /// <summary>
+            /// 强制垃圾回收
+            /// </summary>
             private void PrepareForOperationg()
             {
                 GC.Collect();
