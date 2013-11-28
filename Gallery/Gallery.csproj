@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Event\EventKey.cs" />
     <Compile Include="Event\EventSet.cs" />
+    <Compile Include="Express\FormatProviderExpress.cs" />
     <Compile Include="Extension\EventArgsExtension.cs" />
     <Compile Include="Extension\EventHandlerExtension.cs" />
     <Compile Include="Extension\StringBuilderExtension.cs" />
