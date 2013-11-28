@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Gallery.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -43,7 +44,6 @@
     <Compile Include="Event\EventSet.cs" />
     <Compile Include="Extension\EventArgsExtension.cs" />
     <Compile Include="Extension\EventHandlerExtension.cs" />
-    <Compile Include="Extension\ObjectExtension.cs" />
     <Compile Include="Extension\StringBuilderExtension.cs" />
     <Compile Include="Extension\StringExtension.cs" />
     <Compile Include="Helper\DateTimeHelper.cs" />

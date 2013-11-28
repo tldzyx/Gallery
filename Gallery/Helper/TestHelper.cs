@@ -1,19 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
 
 namespace Gallery.Helper
 {
+    /// <summary>
+    /// 测试助手
+    /// </summary>
     public static class TestHelper
     {
+        /// <summary>
+        /// 操作计时器
+        /// </summary>
         public class OperationTimer : IDisposable
         {
-            private long _startTime;
-            private string _text;
-            private int _collectionCount;
+            private readonly long _startTime;
+            private readonly string _text;
+            private readonly int _collectionCount;
 
+            /// <summary>
+            /// 初始化操作计时器
+            /// </summary>
+            /// <param name="text">计时器名称</param>
             public OperationTimer(string text)
             {
                 PrepareForOperationg();

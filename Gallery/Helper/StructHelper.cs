@@ -3,6 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace Gallery.Helper
 {
+    /// <summary>
+    /// 结构体助手
+    /// </summary>
     public static class StructHelper
     {
         /// <summary>

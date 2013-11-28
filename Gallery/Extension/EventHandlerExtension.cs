@@ -3,6 +3,9 @@ using System.Threading;
 
 namespace Gallery.Extension
 {
+    /// <summary>
+    /// 处理事件的方法拓展
+    /// </summary>
     public static class EventHandlerExtension
     {
         /// <summary>
@@ -25,7 +28,7 @@ namespace Gallery.Extension
                 prevHandler = currentHandler;
                 EventHandler<TEventArgs> nextHandler =
                     (EventHandler<TEventArgs>)Delegate.Combine(prevHandler, delegateHandler);
-                currentHandler = Interlocked.CompareExchange<EventHandler<TEventArgs>>(
+                currentHandler = Interlocked.CompareExchange(
                     ref eventHandler, nextHandler, prevHandler);
             } while (currentHandler != prevHandler);
         }
@@ -50,7 +53,7 @@ namespace Gallery.Extension
                 prevHandler = currentHandler;
                 EventHandler<TEventArgs> nextHandler =
                     (EventHandler<TEventArgs>)Delegate.Remove(prevHandler, delegateHandler);
-                currentHandler = Interlocked.CompareExchange<EventHandler<TEventArgs>>(
+                currentHandler = Interlocked.CompareExchange(
                     ref eventHandler, nextHandler, prevHandler);
             } while (currentHandler != prevHandler);
         }
@@ -75,7 +78,7 @@ namespace Gallery.Extension
                 prevHandler = currentHandler;
                 EventHandler<TEventArgs> nextHandler =
                     (EventHandler<TEventArgs>)Delegate.RemoveAll(prevHandler, delegateHandler);
-                currentHandler = Interlocked.CompareExchange<EventHandler<TEventArgs>>(
+                currentHandler = Interlocked.CompareExchange(
                     ref eventHandler, nextHandler, prevHandler);
             } while (currentHandler != prevHandler);
         }

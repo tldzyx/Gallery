@@ -2,6 +2,9 @@
 
 namespace Gallery.Helper
 {
+    /// <summary>
+    /// 时刻助手
+    /// </summary>
     public static class DateTimeHelper
     {
         #region 换算常量

@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Gallery.Interface
 {
+    /// <summary>
+    /// 支持克隆，即用与现有实例相同的值创建类的新实例。
+    /// </summary>
+    /// <typeparam name="T">副本类型</typeparam>
     public interface ICloneable<out T> : ICloneable
     {
 

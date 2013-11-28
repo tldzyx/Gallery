@@ -3,6 +3,9 @@ using System.Threading;
 
 namespace Gallery.Extension
 {
+    /// <summary>
+    /// 事件拓展
+    /// </summary>
     public static class EventArgsExtension
     {
         /// <summary>

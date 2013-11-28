@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
 
 namespace Gallery.Event
 {
+    /// <summary>
+    /// 事件容器
+    /// </summary>
     public class EventSet : IDisposable
     {
         // 私有字典用于维护EventKey -> Delegate映射
@@ -14,8 +14,12 @@ namespace Gallery.Event
 
         private readonly object _lock = new object();
 
-        // 添加一个EventKey -> Delegate映射(如果EventKey不存在),
-        // 或者将一个委托与一个现有的EventKey合并
+        /// <summary>
+        /// 添加一个EventKey -> Delegate映射(如果EventKey不存在),
+        /// 或者将一个委托与一个现有的EventKey合并
+        /// </summary>
+        /// <param name="eventKey">事件组键</param>
+        /// <param name="handler">事件方法</param>
         public void Add(EventKey eventKey, Delegate handler)
         {
             Delegate d;
@@ -26,8 +30,12 @@ namespace Gallery.Event
             }
         }
 
-        // 从EventKey(如果它存在)删除一个委托，并且
-        // 在删除最后一个委托时删除EventKey -> Delegate映射
+        /// <summary>
+        /// 从EventKey(如果它存在)删除一个委托，并且
+        /// 在删除最后一个委托时删除EventKey -> Delegate映射
+        /// </summary>
+        /// <param name="eventKey">事件组键</param>
+        /// <param name="handler">事件方法</param>
         public void Remove(EventKey eventKey, Delegate handler)
         {
             Delegate d;
@@ -48,8 +56,12 @@ namespace Gallery.Event
             }
         }
 
-        // 从EventKey(如果它存在)清除一个委托，并且
-        // 在清除最后一个委托时删除EventKey -> Delegate映射
+        /// <summary>
+        /// 从EventKey(如果它存在)清除一个委托，并且
+        /// 在清除最后一个委托时删除EventKey -> Delegate映射
+        /// </summary>
+        /// <param name="eventKey">事件组键</param>
+        /// <param name="handler">事件方法</param>
         public void Clear(EventKey eventKey, Delegate handler)
         {
             Delegate d;
@@ -70,7 +82,11 @@ namespace Gallery.Event
             }
         }
 
-        // 为指定的EventKey引发事件
+        /// <summary>
+        /// 为指定的EventKey引发事件
+        /// </summary>
+        /// <param name="eventKey">事件组键</param>
+        /// <param name="args">事件方法参数</param>
         public void Raise(EventKey eventKey, params object[] args)
         {
             Delegate d;

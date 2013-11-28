@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-
+﻿
 namespace Gallery.Extension
 {
+    /// <summary>
+    /// 字符串拓展
+    /// </summary>
     public static class StringExtension
     {
         /// <summary>
