@@ -40,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActiveX\ActiveX.cs" />
+    <Compile Include="ActiveX\IObjectSafety.cs" />
+    <Compile Include="ActiveX\IOleClientSite.cs" />
+    <Compile Include="ActiveX\IOleContainer.cs" />
     <Compile Include="Event\EventKey.cs" />
     <Compile Include="Event\EventSet.cs" />
     <Compile Include="Express\FormatProviderExpress.cs" />
