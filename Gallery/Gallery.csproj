@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +49,9 @@
     <Compile Include="Event\EventKey.cs" />
     <Compile Include="Event\EventSet.cs" />
     <Compile Include="Express\FormatProviderExpress.cs" />
+    <Compile Include="Extension\ControlExtension.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Extension\EventArgsExtension.cs" />
     <Compile Include="Extension\EventHandlerExtension.cs" />
     <Compile Include="Extension\StringBuilderExtension.cs" />
