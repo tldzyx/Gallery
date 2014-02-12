@@ -57,6 +57,7 @@
     <Compile Include="Event\FooEventArgs.cs" />
     <Compile Include="Event\TypeWithLotsOfEvents.cs" />
     <Compile Include="Event\EventUnitTest.cs" />
+    <Compile Include="Extension\EnumExtensionUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helper\DateTimeHelperUnitTest.cs" />
     <Compile Include="Extension\EventHandlerExtensionUnitTest.cs" />

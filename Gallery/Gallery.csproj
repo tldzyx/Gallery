@@ -52,6 +52,7 @@
     <Compile Include="Extension\ControlExtension.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Extension\EnumExtension.cs" />
     <Compile Include="Extension\EventArgsExtension.cs" />
     <Compile Include="Extension\EventHandlerExtension.cs" />
     <Compile Include="Extension\StringBuilderExtension.cs" />
