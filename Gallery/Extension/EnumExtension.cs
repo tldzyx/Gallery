@@ -15,7 +15,7 @@ namespace Gallery.Extension
             new ConcurrentDictionary<Type, IDictionary<string, string>>();
 
         /// <summary>
-        ///     获取枚举的描述(Gallery.Extension.DescriptionAttribute特性)，
+        ///     获取枚举的描述(Gallery.Extension.EnumDescriptionAttribute特性)，
         ///     约定枚举的各项值唯一
         /// </summary>
         /// <param name="value">枚举值</param>
