@@ -61,6 +61,8 @@
     <Compile Include="Helper\StructHelper.cs" />
     <Compile Include="Helper\TestHelper.cs" />
     <Compile Include="Interface\ICloneable.cs" />
+    <Compile Include="Interface\IDeepCloneable.cs" />
+    <Compile Include="Interface\IShallowCloneable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -1,4 +1,7 @@
 ﻿
+using System.Security.Cryptography;
+using System.Text;
+
 namespace Gallery.Extension
 {
     /// <summary>
@@ -24,6 +27,24 @@ namespace Gallery.Extension
         public static string ToLowerOrdinal(this string str)
         {
             return str.ToLowerInvariant();
+        }
+
+        /// <summary>
+        /// 字符串转MD5
+        /// </summary>
+        /// <param name="input">当前字符串</param>
+        /// <returns>当前字符串的MD5码全大写格式。</returns>
+        public static string ToMd5(this string input)
+        {
+            MD5CryptoServiceProvider provider = new MD5CryptoServiceProvider();
+            byte[] encryptedBytes = provider.ComputeHash(
+                Encoding.ASCII.GetBytes(input ?? string.Empty));
+            StringBuilder builder = new StringBuilder();
+            foreach (byte value in encryptedBytes)
+            {
+                builder.AppendFormat("{0:X2}", value);
+            }
+            return builder.ToString();
         }
     }
 }
