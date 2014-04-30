@@ -10,6 +10,6 @@
         /// 创建作为当前实例副本的浅表副本。
         /// </summary>
         /// <returns>作为此实例副本的浅表副本。</returns>
-        void ShallowClone(T clone);
+        void ShallowCloneTo(T clone);
     }
 }
