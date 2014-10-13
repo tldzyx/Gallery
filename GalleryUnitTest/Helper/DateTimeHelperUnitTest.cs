@@ -7,51 +7,28 @@ namespace GalleryUnitTest.Helper
     [TestClass]
     public class DateTimeHelperUnitTest
     {
-        private const long CppTimeUtc = 1382976000000;
-        private const long CppTimeLocal = 1383004800000;
-        private static readonly DateTime __csTimeUtc = new DateTime(2013, 10, 28, 16, 0, 0, DateTimeKind.Utc);
-        private static readonly DateTime __csTimeLocal = new DateTime(2013, 10, 29, 0, 0, 0, DateTimeKind.Local);
+        private static readonly DateTime __csTimeUtc = new DateTime(2014, 10, 13, 14, 0, 0, DateTimeKind.Utc);
+        private static readonly long CppTimeUtc = (long)(__csTimeUtc - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds;
+        private static readonly DateTime __csTimeLocal = __csTimeUtc.ToLocalTime();
         
         [TestMethod]
         public void TestMethod_FromUnixTime()
         {
-            DateTime csTimeUnspecifiedUtc = DateTimeHelper.FromUnixTimeUtc(CppTimeUtc, DateTimeKind.Unspecified);
-            Assert.AreEqual(DateTimeKind.Unspecified, csTimeUnspecifiedUtc.Kind);
-            Assert.AreEqual(__csTimeLocal, csTimeUnspecifiedUtc);
-            DateTime csTimeUtcUtc = DateTimeHelper.FromUnixTimeUtc(CppTimeUtc, DateTimeKind.Utc);
+            DateTime csTimeUtcUtc = DateTimeHelper.FromUnixTimeUtc(CppTimeUtc);
             Assert.AreEqual(DateTimeKind.Utc, csTimeUtcUtc.Kind);
             Assert.AreEqual(__csTimeUtc, csTimeUtcUtc);
-            DateTime csTimeLocalUtc = DateTimeHelper.FromUnixTimeUtc(CppTimeUtc, DateTimeKind.Local);
+            DateTime csTimeLocalUtc = DateTimeHelper.FromUnixTimeUtc(CppTimeUtc).ToLocalTime();
             Assert.AreEqual(DateTimeKind.Local, csTimeLocalUtc.Kind);
             Assert.AreEqual(__csTimeLocal, csTimeLocalUtc);
-
-            DateTime csTimeUnspecified = DateTimeHelper.FromUnixTime(CppTimeLocal, DateTimeKind.Unspecified);
-            Assert.AreEqual(DateTimeKind.Unspecified, csTimeUnspecified.Kind);
-            Assert.AreEqual(__csTimeLocal, csTimeUnspecified);
-            DateTime csTimeUtc = DateTimeHelper.FromUnixTime(CppTimeLocal, DateTimeKind.Utc);
-            Assert.AreEqual(DateTimeKind.Utc, csTimeUtc.Kind);
-            Assert.AreEqual(__csTimeUtc, csTimeUtc);
-            DateTime csTimeLocal = DateTimeHelper.FromUnixTime(CppTimeLocal, DateTimeKind.Local);
-            Assert.AreEqual(DateTimeKind.Local, csTimeLocal.Kind);
-            Assert.AreEqual(__csTimeLocal, csTimeLocal);
         }
 
         [TestMethod]
         public void TestMethod_ToUnixTime()
         {
-            long cppTimeUnspecifiedUtc = DateTimeHelper.ToUnixTimeUtc(__csTimeUtc);
-            Assert.AreEqual(CppTimeUtc, cppTimeUnspecifiedUtc);
             long cppTimeUtcUtc = DateTimeHelper.ToUnixTimeUtc(__csTimeUtc);
             Assert.AreEqual(CppTimeUtc, cppTimeUtcUtc);
-            long cppTimeLocalUtc = DateTimeHelper.ToUnixTimeUtc(__csTimeUtc);
+            long cppTimeLocalUtc = DateTimeHelper.ToUnixTimeUtc(__csTimeLocal);
             Assert.AreEqual(CppTimeUtc, cppTimeLocalUtc);
-
-            long cppTimeUnspecified = DateTimeHelper.ToUnixTime(__csTimeLocal);
-            Assert.AreEqual(CppTimeLocal, cppTimeUnspecified);
-            long cppTimeUtc = DateTimeHelper.ToUnixTime(__csTimeLocal);
-            Assert.AreEqual(CppTimeLocal, cppTimeUtc);
-            long cppTimeLocal = DateTimeHelper.ToUnixTime(__csTimeLocal);
-            Assert.AreEqual(CppTimeLocal, cppTimeLocal);
         }
     }
 }
